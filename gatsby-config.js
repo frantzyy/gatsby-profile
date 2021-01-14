@@ -3,15 +3,15 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://frantzyy.github.io/gatsby-profile/`,
     name: `Chris Frantz`,
-    role: `Solutions Architect`,
+    role: `Solutions Engineer`,
     email: `christopher.j.frantz@gmail.com`,
     socialMedia: [
       {
         name: "github",
         link: "https://frantzyy.github.io/",
       },
-      { name: "linkedin", link: "https://linkedin.com" },
-      { name: "twitter", link: "https://twitter.com" },
+      { name: "linkedin", link: "https://linkedin.com/in/chrisfrantz2002" },
+      { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     about: `
       <p>Passionate about architecting web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
