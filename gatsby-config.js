@@ -1,11 +1,10 @@
 module.exports = {
-  /* Your site config here */
+  pathPrefix: "/gatsby-profile",
   siteMetadata: {
     siteUrl: `https://frantzyy.github.io/gatsby-profile/`,
     name: `Chris Frantz`,
     role: `Solutions Architect`,
     email: `christopher.j.frantz@gmail.com`,
-    pathPrefix: "/gatsby-profile",
     socialMedia: [
       {
         name: "github",
