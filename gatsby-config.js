@@ -1,14 +1,15 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    siteUrl: `https://gatsby-starter-clean-resume.netlify.com/`,
+    siteUrl: `https://frantzyy.github.io/gatsby-profile/`,
     name: `Chris Frantz`,
     role: `Solutions Architect`,
     email: `christopher.j.frantz@gmail.com`,
+    pathPrefix: "/gatsby-profile",
     socialMedia: [
       {
         name: "github",
-        link: "https://github.com/frantzyy/gatsby-starter-clean-resume",
+        link: "https://frantzyy.github.io/",
       },
       { name: "linkedin", link: "https://linkedin.com" },
       { name: "twitter", link: "https://twitter.com" },
