@@ -5,9 +5,11 @@ import { Link } from "gatsby"
 const Menu = props => {
   const menuItems = [
     { name: "About", link: "/" },
-    { name: "Skills", link: "/skills" },
+    { name: "Objective", link: "/objective" },
     { name: "Education", link: "/education" },
+    { name: "Certifications", link: "/certifications" },
     { name: "Experience", link: "/experience" },
+    { name: "Skills", link: "/skills" },
     { name: "Interests", link: "/interests" },
   ].map((item, index) => (
     <MenuItem

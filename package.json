@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-clean-resume",
+  "name": "gatsby-profile",
   "private": true,
-  "description": "A Gatsby starter for your resume",
+  "description": "Gatsby profile site for Chris Frantz",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
