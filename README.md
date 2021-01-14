@@ -2,7 +2,7 @@
 
 My online resume and profile using Gatsby and this sweet gatsby bolier plate [gatsby-starter-clean-resume](https://github.com/masoudkarimif/gatsby-starter-clean-resume/) plus a few modifications.
 
-Check out the live demo [here](https://frantzyy.github.io/gatsby-profile).
+Check out the my profile running [https://frantzyy.github.io/gatsby-profile](https://frantzyy.github.io/gatsby-profile).
 
 ## Quick start
 
