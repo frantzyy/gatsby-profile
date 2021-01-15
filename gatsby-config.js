@@ -64,7 +64,7 @@ module.exports = {
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Tech lead for two agile teams that develop and support 12 applications for agents and partners across Liberty and Safeco brands.<p>
-        <ul><li>Defined vision and roadmap to modernize our apps for a savings of $250K year over year</li>
+        <ul><li>Defined vision and technical roadmap while influencing business leaders and IT leaders to modernize our apps to the cloud for a savings of $250K year over year</li>
         <li>Designed and built a front-end gateway to manage identity using OIDC and support multi-sessions </li>
         <li>mproved performance in overall page speed by 1 second for savings $166K per year</li>
         <li>Reduced errors by 80% </li>
