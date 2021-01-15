@@ -14,12 +14,12 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     about: `
+      <p>Natural leader with 19 years of experience in large scale, complex, quoting and claims systems who thrives on pushing the boundaries and thinking outside the box. </p>
       <p>Passionate about architecting web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
-      <p>Natural leader with 19 years of experience in the insurance industry.</p>
-      <p>Constantly looking to push myself and learn more.</p>
+      <p>Constantly pushing myself to learn more and be a thought leader.</p>
       `,
     objective: `
-          <p>To advance my career by taking on a Solutions Architect position that enables me to bring my leadership abilities and passion for development to help drive solutions across multiple teams and systems.</p>
+          <p>To advance my career by taking on an Architect position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems.</p>
       `,
     certifications: [
       {
@@ -64,11 +64,13 @@ module.exports = {
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Tech lead for two agile teams that develop and support 12 applications for agents and partners across Liberty and Safeco brands.<p>
-        <ul><li>Defined vision and technical roadmap while influencing business leaders and IT leaders to modernize our apps to the cloud for a savings of $250K year over year</li>
-        <li>Designed and built a front-end gateway to manage identity using OIDC and support multi-sessions </li>
-        <li>mproved performance in overall page speed by 1 second for savings $166K per year</li>
+        <ul><li>Change leader who defined vision and technical roadmap while influencing business and IT leaders to modernize our legacy applications from WAS on premise to Tomcat and React/NodeJS in AWS for a savings of $250K year over year</li>
+        <li>Migrated our authentication from Siteminder to Ping and Azure AD using OIDC </li>
+        <li>Solved session affinity when running in our cloud platform</li>
+        <li>Innovated a solution to support multi-sessions for our legacy applications enabling modern browsers</li>
         <li>Reduced errors by 80% </li>
-        <li>Led vendor engagement to deliver new Knowledge Center web app for our call center reps</li></ul>
+        <li>Led vendor engagement to deliver new Knowledge Center web app for our call center reps</li>
+        <li>Mentored teams on Technical Excellence and defining KPIs to help exceed their business and technical goals</li></ul>
         `,
       },
       {
