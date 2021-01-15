@@ -6,9 +6,9 @@ const Badge = props => {
   let badge
 
   if (props.name === "ssa_badge") {
-    badge = <img height="150" width="150" src={ssa_badge} />
+    badge = <img height="125" width="140" src={ssa_badge} />
   } else {
-    badge = <img height="150" width="150" src={cp_badge} />
+    badge = <img height="125" width="140" src={cp_badge} />
   }
 
   return badge

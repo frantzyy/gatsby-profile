@@ -27,7 +27,7 @@ export default props => {
     (item, index) => (
       <table>
         <tr>
-          <td>
+          <td style={{ width: "140px" }}>
             <Badge name={item.badge}></Badge>
           </td>
           <td>

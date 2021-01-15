@@ -8,7 +8,7 @@ module.exports = {
     socialMedia: [
       {
         name: "github",
-        link: "https://frantzyy.github.io/",
+        link: "https://github.com/frantzyy",
       },
       { name: "linkedin", link: "https://linkedin.com/in/chrisfrantz2002" },
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
