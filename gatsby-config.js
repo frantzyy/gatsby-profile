@@ -14,7 +14,7 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     about: `
-      <p>Natural leader with 19 years of experience in large scale, complex, quoting and claims systems who thrives on pushing the boundaries and thinking outside the box. </p>
+      <p>Natural leader with 19 years of experience in large scale, complex, quoting, claims, and customer management systems who thrives on pushing the boundaries and thinking outside the box. </p>
       <p>Passionate about architecting web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
       <p>Constantly pushing myself to learn more and be a thought leader.</p>
       `,
