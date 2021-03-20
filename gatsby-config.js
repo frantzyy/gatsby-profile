@@ -16,10 +16,10 @@ module.exports = {
     about: `
       <p>Natural leader with 19 years of experience in large scale, complex, quoting, claims, and customer management systems who thrives on pushing the boundaries and thinking outside the box. </p>
       <p>Passionate about architecting web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
-      <p>Constantly pushing myself to learn more and be a thought leader.</p>
+      <p>Constantly pushing myself to learn more and do more.</p>
       `,
     objective: `
-          <p>To advance my career by taking on an Architect position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems.</p>
+          <p>Advance my career by taking on an Solitions Architect or Technical Manager position that enables me to bring my passion for development and leadership abilities to drive forward thinking solutions across multiple teams and systems.</p>
       `,
     certifications: [
       {
