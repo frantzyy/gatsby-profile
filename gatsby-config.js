@@ -16,10 +16,10 @@ module.exports = {
     about: `
       <p>Natural leader with 19 years of experience in large scale, complex, quoting, claims, and customer management systems who thrives on pushing the boundaries and thinking outside the box. </p>
       <p>Passionate about architecting web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
-      <p>Constantly pushing myself to learn more and be a thought leader.</p>
+      <p>Constantly pushing myself to learn more and do more.</p>
       `,
     objective: `
-          <p>To advance my career by taking on an Architect position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems.</p>
+          <p>To advance my career by taking on an Software Engineering Management position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems.</p>
       `,
     certifications: [
       {
@@ -63,14 +63,14 @@ module.exports = {
         when: "2018-Present",
         company: "Liberty Mutual",
         where: "Remote",
-        moreInfo: `<p>Tech lead for two agile teams that develop and support 12 applications for agents and partners across Liberty and Safeco brands.<p>
-        <ul><li>Change leader who defined vision and technical roadmap while influencing business and IT leaders to modernize our legacy applications from WAS on premise to Tomcat and React/NodeJS in AWS for a savings of $250K year over year</li>
-        <li>Migrated our authentication from Siteminder to Ping and Azure AD using OIDC </li>
-        <li>Solved session affinity when running in our cloud platform</li>
-        <li>Innovated a solution to support multi-sessions for our legacy applications enabling modern browsers</li>
+        moreInfo: `<p>Tech lead for three agile teams that develop and support 15 applications for our internal and external users across Liberty and Safeco brands.<p>
+        <ul><li>Change leader who defined vision and technical roadmap while influencing business and IT leaders to modernize our legacy applications to AWS for a savings of $400K year over year</li>
+        <li>Upgraded our security to use OIDC standards</li>
+        <li>Solved session affinity issues while running a PaaS platform</li>
+        <li>Enabled our legacy applicaitons to use modern browsers</li>
         <li>Reduced errors by 80% </li>
-        <li>Led vendor engagement to deliver new Knowledge Center web app for our call center reps</li>
-        <li>Mentored teams on Technical Excellence and defining KPIs to help exceed their business and technical goals</li></ul>
+        <li>Technical lead to onboard a vendor CMS product</li>
+        <li>Mentored multiple teams on Technical Excellence and defining KPIs to help exceed their business and technical goals</li></ul>
         `,
       },
       {
@@ -81,7 +81,7 @@ module.exports = {
         moreInfo: `<p>Part of core team tasked with architecting a shared platform for 21 front-end applications to use.
         <ul><li>Assessed new technologies and frameworks</li>
         <li>Championed common libraries and inner source</li>
-        <li>Migrated all applications from RTC to Git</li>
+        <li>Help lead migration scm strategy from RTC to Git</li>
         <li>Advocated and mentored teams in BDD adoption, test automation, and cloud adoption</li><ul>
         `,
       },
