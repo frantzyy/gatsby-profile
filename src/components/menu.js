@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 
 const Menu = props => {
   const menuItems = [
-    { name: "About", link: "/" },
-    { name: "Objective", link: "/objective" },
+    { name: "Objective", link: "/" },
+    { name: "About", link: "/about" },
     { name: "Education", link: "/education" },
     { name: "Certifications", link: "/certifications" },
     { name: "Experience", link: "/experience" },
