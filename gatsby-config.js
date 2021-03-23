@@ -14,7 +14,7 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     objective: `
-    <p>To advance my career by taking on a Software Engineering Manager or similar Solutions Architect position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems while helping coach and mentor teammates to grow their skill set and breadth of knowledge.</p>
+    <p>To advance my career by taking on a software engineering leadership position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems while helping coach and mentor teammates to grow their skill set and breadth of knowledge.</p>
 `,
     about: `
       <p>Natural leader with 19 years of experience in large scale, complex, data intensive, distributed web applications who thrives on pushing the boundaries and thinking outside the box.
