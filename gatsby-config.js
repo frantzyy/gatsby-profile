@@ -129,7 +129,7 @@ module.exports = {
         `,
       },
     ],
-    skills: [
+    skillsExperience: [
       {
         name: "JavaScript",
         level: "85",
@@ -164,6 +164,39 @@ module.exports = {
         name: "Java",
         level: "50",
         experience: "10 years",
+      },
+    ],
+    skills: [
+      {
+        category: "Languages/Markup",
+        skills: "Javascript, Java, JSON, HTML, CSS, XML, YML, MD, SQL",
+      },
+      {
+        category: "Libraries/Frameworks",
+        skills: "AWS, CloudFoundry, React, Node.js, Express, NGINX",
+      },
+      {
+        category: "Security",
+        skills:
+          "OIDC, OAuth2, SAML, LDAP, AD, Azure AD, Ping, Siteminder, CDN, Apigee, Passport.js",
+      },
+      {
+        category: "Databases/Storage",
+        skills: "S3, Redis, DynamoDB, DB2",
+      },
+      {
+        category: "Build Tools",
+        skills: "Gradle, Maven, Ant, Bamboo, Jenkins, npm, Webpack",
+      },
+      {
+        category: "Testing Tools",
+        skills:
+          "Nightwatch, Jasmine, Karma, Jest, Cucumber, Postman, TestCafe, Cypress.io, Selenium, Saucelabs",
+      },
+      {
+        category: "Concepts",
+        skills:
+          "Cloud Native Architectures, Single Page Applications, MVC, REST, GraphQL, Behavior Driven Design, CQRS, Event Driven Architectures, Analytics, Monitoring, Responsive Web Design, Test Driven Development, Continuous Integration and Continuous Delivery, Component Based Design, Functional Programming",
       },
     ],
     interests: [
