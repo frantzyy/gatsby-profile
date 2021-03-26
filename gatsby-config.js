@@ -13,14 +13,16 @@ module.exports = {
       { name: "linkedin", link: "https://linkedin.com/in/chrisfrantz2002" },
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
+    objective: `
+    <p>To advance my career by taking on a software engineering leadership position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems while helping coach and mentor teammates to grow their skill set and breadth of knowledge.</p>
+`,
     about: `
-      <p>Natural leader with 19 years of experience in large scale, complex, quoting, claims, and customer management systems who thrives on pushing the boundaries and thinking outside the box. </p>
-      <p>Passionate about architecting web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
+      <p>Natural leader with 19 years of experience in large scale, complex, data intensive, distributed web applications who thrives on pushing the boundaries and thinking outside the box.
+      </p>
+      <p>Passionate about architecting and developing web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
       <p>Constantly pushing myself to learn more and do more.</p>
       `,
-    objective: `
-          <p>To advance my career by taking on an Software Engineering Management position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems.</p>
-      `,
+
     certifications: [
       {
         vendor: "AWS",
@@ -49,7 +51,7 @@ module.exports = {
         moreInfo: "",
       },
       {
-        degree: "Semster Abroad",
+        degree: "Semester Abroad",
         major: "",
         when: "2000",
         school: "Royal Melbourne Institute of Technology",
@@ -59,18 +61,18 @@ module.exports = {
     ],
     experience: [
       {
-        role: "Solutions Engineer | GRMUS | Agents and Partners",
+        role: "Solutions Engineer | GRMUS | Service",
         when: "2018-Present",
         company: "Liberty Mutual",
         where: "Remote",
-        moreInfo: `<p>Tech lead for three agile teams that develop and support 15 applications for our internal and external users across Liberty and Safeco brands.<p>
-        <ul><li>Change leader who defined vision and technical roadmap while influencing business and IT leaders to modernize our legacy applications to AWS for a savings of $400K year over year</li>
+        moreInfo: `<p>Technical lead and mentor for three agile teams that develop and support 15 applications for our internal and external users across Liberty and Safeco brands. <p>
+        <ul><li>Change leader who defined vision and technical roadmap while influencing business and IT leaders to modernize our legacy applications by re-platforming to a PaaS and replacing capabilities using React/NodeJS in AWS for a savings of $400K year over year</li>
         <li>Upgraded our security to use OIDC standards</li>
-        <li>Solved session affinity issues while running a PaaS platform</li>
+        <li>Solved session affinity issues while migrating to a PaaS platform</li>
         <li>Enabled our legacy applicaitons to use modern browsers</li>
         <li>Reduced errors by 80% </li>
         <li>Technical lead to onboard a vendor CMS product</li>
-        <li>Mentored multiple teams on Technical Excellence and defining KPIs to help exceed their business and technical goals</li></ul>
+        <li>Mentored teams on building cloud native applications and technical excellence to improve their skill set and proficiency to deliver quality features.</li></ul>
         `,
       },
       {
@@ -127,7 +129,7 @@ module.exports = {
         `,
       },
     ],
-    skills: [
+    skillsExperience: [
       {
         name: "JavaScript",
         level: "85",
@@ -140,23 +142,61 @@ module.exports = {
       },
       {
         name: "CSS",
-        level: "75",
+        level: "65",
         experience: "20 years",
       },
       {
         name: "React",
-        level: "75",
+        level: "85",
         experience: "3 years",
       },
       {
         name: "Express",
-        level: "75",
+        level: "85",
+        experience: "3 years",
+      },
+      {
+        name: "NodeJS",
+        level: "85",
         experience: "3 years",
       },
       {
         name: "Java",
         level: "50",
-        experience: "15 years",
+        experience: "10 years",
+      },
+    ],
+    skills: [
+      {
+        category: "Languages/Markup",
+        skills: "Javascript, Java, JSON, HTML, CSS, XML, YML, MD, SQL",
+      },
+      {
+        category: "Libraries/Frameworks",
+        skills: "AWS, CloudFoundry, React, Node.js, Express, NGINX",
+      },
+      {
+        category: "Security",
+        skills:
+          "OIDC, OAuth2, SAML, LDAP, AD, Azure AD, Ping, Siteminder, CDN, Apigee, Passport.js",
+      },
+      {
+        category: "Databases/Storage",
+        skills: "S3, Redis, DynamoDB, DB2",
+      },
+      {
+        category: "Build Tools",
+        skills: "Gradle, Maven, Ant, Bamboo, Jenkins, npm, Webpack",
+      },
+      {
+        category: "Testing Tools",
+        skills:
+          "Nightwatch, Jasmine, Karma, Jest, Cucumber, Postman, TestCafe, Cypress.io, Selenium, Saucelabs",
+      },
+      {
+        category: "Concepts",
+        skills:
+          "Cloud Native Architectures, Single Page Applications, MVC, REST, GraphQL, Behavior Driven Design, CQRS, Event Driven Architectures, Analytics, Monitoring, Responsive Web Design, Test Driven Development, Continuous Integration and Continuous Delivery, Component Based Design, Functional Programming",
       },
     ],
     interests: [

@@ -1,29 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
+import Skill from "../components/skill"
 import { useStaticQuery, graphql } from "gatsby"
-
-const Skill = props => {
-  return (
-    <table className="item-table skill-table">
-      <tbody>
-        <tr>
-          <td className="item-name">{props.name || ""}</td>
-          <td className="item-when">{props.experience || ""}&nbsp;</td>
-        </tr>
-        <tr>
-          <td className="" colSpan={2}>
-            <div className="skill-meter-wrapper">
-              <div
-                className="skill-meter"
-                style={{ width: props.level + "%" }}
-              ></div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  )
-}
+import Item from "../components/item"
 
 export default props => {
   const data = useStaticQuery(graphql`
@@ -31,21 +10,15 @@ export default props => {
       site {
         siteMetadata {
           skills {
-            name
-            level
-            experience
+            category
+            skills
           }
         }
       }
     }
   `)
   const skills = data.site.siteMetadata.skills.map((item, index) => (
-    <Skill
-      key={index}
-      name={item.name}
-      level={item.level}
-      experience={item.experience}
-    />
+    <Skill key={index} category={item.category} skills={item.skills}></Skill>
   ))
   return (
     <Layout pageTitle="Skills" pageDescription="Learn more about my skills">
