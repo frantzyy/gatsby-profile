@@ -69,7 +69,7 @@ module.exports = {
         <ul><li>Change leader who defined vision and technical roadmap while influencing business and IT leaders to modernize our legacy applications by re-platforming to a PaaS and replacing capabilities using React/NodeJS in AWS for a savings of $400K year over year</li>
         <li>Upgraded our security to use OIDC standards</li>
         <li>Solved session affinity issues while migrating to a PaaS platform</li>
-        <li>Enabled our legacy applicaitons to use modern browsers</li>
+        <li>Enabled our legacy applications to use modern browsers</li>
         <li>Reduced errors by 80% </li>
         <li>Technical lead to onboard a vendor CMS product</li>
         <li>Mentored teams on building cloud native applications and technical excellence to improve their skill set and proficiency to deliver quality features.</li></ul>
