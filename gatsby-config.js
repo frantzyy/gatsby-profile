@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://frantzyy.github.io/gatsby-profile`,
     name: `Chris Frantz`,
-    role: `Solutions Engineer`,
+    role: `Senior Solutions Architect`,
     email: `christopher.j.frantz@gmail.com`,
     socialMedia: [
       {
@@ -14,12 +14,16 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     objective: `
-    <p>To advance my career by taking on a software engineering leadership position that enables me to bring my passion for development and leadership abilities to help drive forward thinking solutions across multiple teams and systems while helping coach and mentor teammates to grow their skill set and breadth of knowledge.</p>
+    <p>Advance my career by taking on a Senior Portfolio Architect position 
+    that enables me to bring my passion for development and leadership abilities 
+    to help drive forward thinking solutions across an entire portfolio.</p>
 `,
     about: `
-      <p>Natural leader with 19 years of experience in large scale, complex, data intensive, distributed web applications who thrives on pushing the boundaries and thinking outside the box.
+      <p>Going on 20 years of experience in large scale, complex, data intensive,
+       distributed systems who thrives on pushing the boundaries and thinking outside the box.
       </p>
-      <p>Passionate about architecting and developing web applications to be faster, more secure, more reliable, easier to maintain, and cost less.</p>
+      <p>Passionate about architecting solutions that make our systems more performant, more secure, more reliable, resillient, 
+      easier to maintain, and cost less. Not to mention keeping up with my 4-year-old, 1-year-old, and energetic and advenurous wife.</p>
       <p>Constantly pushing myself to learn more and do more.</p>
       `,
 
@@ -61,8 +65,28 @@ module.exports = {
     ],
     experience: [
       {
+        role: "Senior Solutions Architect | GRMUS | Architecture",
+        when: "2021-Present",
+        company: "Liberty Mutual",
+        where: "Remote",
+        moreInfo: `<p>Tasked with defining our API Strategy and our overall Service
+         Portfolio's user experiences.<p>
+        <ul><li>Within a few months of the new role was able to define an API 
+        Strategy that set expectations for our API direction and iniated the 
+        convergence of multiple efforts across Liberty for our API technical decisions, standards, and eventually 
+        enablement patterns</li>
+        <li>Helped put a newly defined architecture process to the test by 
+        providing valuable feedback and setting an example for peers to follow with the API Strategy and related artifacts </li>
+        <li>Driving collaboration by bringing together key knowledge experts, regardless of org, for specific
+        working groups around API Security, API Gateways, API architecture patterns and API implementation needs such as GraphQL Federation.</li>
+        <li>Pushing business architecture to re-imagine how we define our business 
+        capabilities to better align with our vision to become an API-First company</li>
+        </ul>
+        `,
+      },
+      {
         role: "Solutions Engineer | GRMUS | Service",
-        when: "2018-Present",
+        when: "2018-2021",
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Technical lead and mentor for three agile teams that develop and support 15 applications for our internal and external users across Liberty and Safeco brands. <p>
@@ -196,7 +220,7 @@ module.exports = {
       {
         category: "Concepts",
         skills:
-          "Cloud Native Architectures, Single Page Applications, MVC, REST, GraphQL, Behavior Driven Design, CQRS, Event Driven Architectures, Analytics, Monitoring, Responsive Web Design, Test Driven Development, Continuous Integration and Continuous Delivery, Component Based Design, Functional Programming",
+          "API Strategy, API-First, API Products, Cloud Native Architectures, Single Page Applications, MVC, REST, GraphQL, Behavior Driven Design, CQRS, Event Driven Architectures, Analytics, Monitoring, Responsive Web Design, Test Driven Development, Continuous Integration and Continuous Delivery, Component Based Design, Functional Programming",
       },
     ],
     interests: [

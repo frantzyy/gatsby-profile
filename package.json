@@ -2,7 +2,7 @@
   "name": "gatsby-profile",
   "private": true,
   "description": "Gatsby profile site for Chris Frantz",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -15,7 +15,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
-    "gatsby": "^2.30.1",
+    "gatsby": "^4.15.1",
     "gatsby-plugin-google-analytics": "^2.1.37",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-google-gtag": "^3.2.0",
