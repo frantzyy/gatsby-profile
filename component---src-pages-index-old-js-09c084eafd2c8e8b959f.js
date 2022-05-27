@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_profile=self.webpackChunkgatsby_profile||[]).push([[280],{4081:function(e,t,a){a.r(t);var n=a(7294),r=a.n(n),u=a(4305),i=a(9550);t.default=function(e){var t=(0,i.K2)("4224701694");return r().createElement(u.Z,{pageTitle:"About",pageDescription:"Learn more about me"},r().createElement("div",{dangerouslySetInnerHTML:{__html:t.site.siteMetadata.about}}))}}}]);
+//# sourceMappingURL=component---src-pages-index-old-js-09c084eafd2c8e8b959f.js.map
