@@ -11,6 +11,7 @@ const Menu = props => {
     { name: "Experience", link: "/experience" },
     { name: "Skills", link: "/skills" },
     { name: "Interests", link: "/interests" },
+    { name: "Private", link: "/private" },
   ].map((item, index) => (
     <MenuItem
       to={item.link}
