@@ -17,9 +17,8 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     objective: `
-    <p>Advance my career by taking on a Enterprise Architecture position 
-    that enables me to bring my passion for development and leadership abilities 
-    to help drive forward thinking solutions across an entire enterprise.</p>
+    <p>Seeking an Enterprise Architecture position where I can leverage my passion for designing innovative software solutions and my 
+    leadership skills to drive forward-thinking strategies across the enterprise, enhancing business performance and efficiency</p>
 `,
     about: `
       <p>Going on 20 years of experience in large scale, complex, data intensive,
@@ -68,8 +67,16 @@ module.exports = {
     ],
     experience: [
       {
-        role: "Senior Solutions Architect | GRMUS | Architecture",
-        when: "2021-Present",
+        role: "Senior Portfolio Architect | USRM | Architecture",
+        when: "2022-Present",
+        company: "Liberty Mutual",
+        where: "Remote",
+        moreInfo: `<p>Aligned to leading our Distribution Technology Domain architecture direction in alignment with our overall north star architecture for USRM and the enterprise.<p>
+        `,
+      },
+      {
+        role: "Senior Solutions Architect | USRM | Architecture",
+        when: "2021-2022",
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Tasked with defining our API Strategy and our overall Service
@@ -88,7 +95,7 @@ module.exports = {
         `,
       },
       {
-        role: "Solutions Engineer | GRMUS | Service",
+        role: "Solutions Engineer | USRM | Service",
         when: "2018-2021",
         company: "Liberty Mutual",
         where: "Remote",
@@ -103,7 +110,7 @@ module.exports = {
         `,
       },
       {
-        role: "Solutions Engineer | GRMUS | Distribution",
+        role: "Solutions Engineer | USRM | Distribution",
         when: "2014-2018",
         company: "Liberty Mutual",
         where: "Remote",
@@ -115,7 +122,7 @@ module.exports = {
         `,
       },
       {
-        role: "Principal Software Developer | GRMUS | Digital",
+        role: "Principal Software Developer | USRM | Digital",
         when: "2011-2013",
         company: "Liberty Mutual",
         where: "Portsmouth, NH",
@@ -124,7 +131,7 @@ module.exports = {
         `,
       },
       {
-        role: "Senior Software Developer | GRMUS | Digital ",
+        role: "Senior Software Developer | USRM | Digital ",
         when: "2008-2010",
         company: "Liberty Mutual",
         where: "Portsmouth, NH",
