@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Item from "../components/item"
 import Badge from "../components/badge"
 import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 // import Img from "gatsby-image" // to take image data and render it
 
@@ -50,6 +51,11 @@ export default props => {
       pageDescription="Certifications I've obtained."
     >
       {certifications}
+
+      
+      {/* <p>testing</p>
+      <div data-iframe-width="600" data-iframe-height="500" data-share-badge-id="56ca2218-26b9-437d-9060-2bf2b8b4c6e1" data-share-badge-host="https://www.credly.com"></div>
+      <Helmet><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></Helmet> */}
     </Layout>
   )
 }

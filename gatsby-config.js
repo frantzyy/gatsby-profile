@@ -3,7 +3,10 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://frantzyy.github.io/gatsby-profile`,
     name: `Chris Frantz`,
-    role: `Senior Solutions Architect`,
+    jobTitle: `Senior Portfolio Architect`,
+    role: `Distribution Technology Domain`,
+    department: `US Retail Markets Architecture`,
+    company: `Liberty Mutual`,
     email: `christopher.j.frantz@gmail.com`,
     socialMedia: [
       {
@@ -14,16 +17,15 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     objective: `
-    <p>Advance my career by taking on a Senior Portfolio Architect position 
-    that enables me to bring my passion for development and leadership abilities 
-    to help drive forward thinking solutions across an entire portfolio.</p>
+    <p>Seeking an Enterprise Architecture position where I can leverage my passion for designing innovative software solutions and my 
+    leadership skills to drive forward-thinking strategies across the enterprise, enhancing business performance and efficiency</p>
 `,
     about: `
       <p>Going on 20 years of experience in large scale, complex, data intensive,
        distributed systems who thrives on pushing the boundaries and thinking outside the box.
       </p>
-      <p>Passionate about architecting solutions that make our systems more performant, more secure, more reliable, resillient, 
-      easier to maintain, and cost less. Not to mention keeping up with my 4-year-old, 1-year-old, and energetic and advenurous wife.</p>
+      <p>Passionate about architecting solutions that make our systems more performant, more secure, more reliable and resillient, 
+      easier to maintain, and cost less. Not to mention keeping up with my 6-year-old, 3-year-old, and energetic and advenurous wife.</p>
       <p>Constantly pushing myself to learn more and do more.</p>
       `,
 
@@ -39,9 +41,9 @@ module.exports = {
       {
         vendor: "AWS",
         type: "Coud Practioner",
-        when: "2020-2023",
+        when: "2024-06-27 to 2027-06-27",
         certID:
-          "<a href='https://www.youracclaim.com/badges/ee00a0c2-8941-4ceb-9c62-667c5d1b9258/public_url'>63EMS54JKFQ1QT5L</a>",
+          "<a href='https://www.credly.com/badges/56ca2218-26b9-437d-9060-2bf2b8b4c6e1/public_url'>63EMS54JKFQ1QT5L</a>",
         badge: "cp_badge",
       },
     ],
@@ -65,8 +67,16 @@ module.exports = {
     ],
     experience: [
       {
-        role: "Senior Solutions Architect | GRMUS | Architecture",
-        when: "2021-Present",
+        role: "Senior Portfolio Architect | USRM | Architecture",
+        when: "2022-Present",
+        company: "Liberty Mutual",
+        where: "Remote",
+        moreInfo: `<p>Aligned to leading our Distribution Technology Domain architecture direction in alignment with our overall north star architecture for USRM and the enterprise.<p>
+        `,
+      },
+      {
+        role: "Senior Solutions Architect | USRM | Architecture",
+        when: "2021-2022",
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Tasked with defining our API Strategy and our overall Service
@@ -85,7 +95,7 @@ module.exports = {
         `,
       },
       {
-        role: "Solutions Engineer | GRMUS | Service",
+        role: "Solutions Engineer | USRM | Service",
         when: "2018-2021",
         company: "Liberty Mutual",
         where: "Remote",
@@ -100,7 +110,7 @@ module.exports = {
         `,
       },
       {
-        role: "Solutions Engineer | GRMUS | Distribution",
+        role: "Solutions Engineer | USRM | Distribution",
         when: "2014-2018",
         company: "Liberty Mutual",
         where: "Remote",
@@ -112,7 +122,7 @@ module.exports = {
         `,
       },
       {
-        role: "Principal Software Developer | GRMUS | Digital",
+        role: "Principal Software Developer | USRM | Digital",
         when: "2011-2013",
         company: "Liberty Mutual",
         where: "Portsmouth, NH",
@@ -121,7 +131,7 @@ module.exports = {
         `,
       },
       {
-        role: "Senior Software Developer | GRMUS | Digital ",
+        role: "Senior Software Developer | USRM | Digital ",
         when: "2008-2010",
         company: "Liberty Mutual",
         where: "Portsmouth, NH",
