@@ -13,6 +13,9 @@ const Layout = props => {
         siteMetadata {
           name
           role
+          department
+          company
+          jobTitle
           email
           socialMedia {
             name
@@ -51,6 +54,9 @@ const Layout = props => {
               <Profile
                 name={data.site.siteMetadata.name}
                 role={data.site.siteMetadata.role}
+                jobTitle={data.site.siteMetadata.jobTitle}
+                department={data.site.siteMetadata.department}
+                company={data.site.siteMetadata.company}
                 socialMedia={data.site.siteMetadata.socialMedia}
                 email={data.site.siteMetadata.email}
               />

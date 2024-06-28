@@ -35,7 +35,10 @@ const Profile = props => {
       <img src={profile_photo} alt={props.name} id="profile-img" />
       <div id="profile-info-wrapper">
         <h4 id="profile-name">{props.name}</h4>
-        <h6 id="profile-role">{props.role}</h6>
+        <h6 id="profile-jobTitle">{props.jobTitle}</h6>
+        <p id="profile-role">{props.role}</p>
+        <p id="profile-department">{props.department}</p>
+        <p id="profile-company">{props.company}</p>
         <p id="profile-email">
           <a href={"mailto:" + props.email}>{props.email || ""}</a>
         </p>
