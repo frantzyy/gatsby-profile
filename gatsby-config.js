@@ -17,15 +17,15 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     objective: `
-    <p>Seeking an Enterprise Architecture position where I can leverage my passion for designing innovative software solutions and my 
-    leadership skills to drive forward-thinking strategies across the enterprise, enhancing business performance and efficiency</p>
+    <p>Seeking a Platform or Enterprise Architecture position where I can leverage my passion for designing innovative software solutions and my 
+    leadership skills to drive forward-thinking strategies across SBU or enterprise while enhancing business outcomes and efficiency</p>
 `,
     about: `
-      <p>Going on 20 years of experience in large scale, complex, data intensive,
-       distributed systems who thrives on pushing the boundaries and thinking outside the box.
+      <p>Over 20 years of experience in large scale, complex, data intensive,
+       distributed systems who thrives on problem solving and thinking outside the box.
       </p>
       <p>Passionate about architecting solutions that make our systems more performant, more secure, more reliable and resillient, 
-      easier to maintain, and cost less. Not to mention keeping up with my 6-year-old, 3-year-old, and energetic and advenurous wife.</p>
+      easier to maintain, and cost less. All the while keeping up with my 6-year-old, 3-year-old, and energetic and advenurous wife.</p>
       <p>Constantly pushing myself to learn more and do more.</p>
       `,
 
@@ -33,9 +33,9 @@ module.exports = {
       {
         vendor: "AWS",
         type: "Solutions Architect - Associate",
-        when: "2018-2023",
+        when: "2024-07-25 to 2027-07-25",
         certID:
-          "<a href='https://www.youracclaim.com/badges/5f7a0abd-940b-472f-b509-3aa9190d9d4d/public_url'>5QXSV6RKLB41QTCL</a>",
+          "<a href='https://www.credly.com/badges/70d9ed90-96af-46cb-abe5-f8190fc5b025/public_url'>verify</a>",
         badge: "ssa_badge",
       },
       {
@@ -43,7 +43,7 @@ module.exports = {
         type: "Coud Practioner",
         when: "2024-06-27 to 2027-06-27",
         certID:
-          "<a href='https://www.credly.com/badges/56ca2218-26b9-437d-9060-2bf2b8b4c6e1/public_url'>63EMS54JKFQ1QT5L</a>",
+          "<a href='https://www.credly.com/badges/56ca2218-26b9-437d-9060-2bf2b8b4c6e1/public_url'>verify</a>",
         badge: "cp_badge",
       },
     ],
@@ -72,7 +72,8 @@ module.exports = {
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Aligned to leading our Distribution Technology Domain architecture direction in alignment with our overall north star architecture for USRM and the enterprise.<p>
-        `,
+        <ul><li>Helped redefine how our people are organized around our software to align better with architecture direction and creating a more lean, product mindeset operating model.</li>
+        <ul>`,
       },
       {
         role: "Senior Solutions Architect | USRM | Architecture",
