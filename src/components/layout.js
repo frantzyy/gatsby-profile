@@ -23,6 +23,7 @@ const Layout = props => {
           }
           theme
           font
+          version
         }
       }
     }
@@ -72,7 +73,10 @@ const Layout = props => {
           <div className="container">
             <div className="row">
               <div className="column">
-                <Footer name={data.site.siteMetadata.name} />
+                <Footer 
+                  name={data.site.siteMetadata.name} 
+                  version={data.site.siteMetadata.version}
+                />
               </div>
             </div>
           </div>
