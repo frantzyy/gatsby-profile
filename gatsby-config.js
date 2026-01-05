@@ -25,7 +25,7 @@ module.exports = {
     about: `
       <p>Architect with over 20 years of IT professional experience in development and maintenance of large scale web applications for public and internal facing insurance sales, service, and claims systems.</p>
       <p>Now aligned to our Distribution Tech domain for Liberty's Global Risk Solutions SBU providing insurance and risk solutions for businesses worldwide. Focused on helping refine and lead the next target state architecture.</p>
-      <p>Eagerly exploring GraphQL concepts and implementations as well as data solutions involving data analytics, data storage, and data science including ML and AI.</p>
+      <p>Eagerly exploring AI integration and how we can leverage it to improve our business operations, software development, and architecture workflows. Passionate about GraphQL implementations and actively leaning into MCP (Model Context Protocol) and agentic AI solutions to enhance system capabilities and developer productivity.</p>
       <p>Advocate and driver of Behavior Driven Development, CI/CD processes, test automation, TDD first, responsive design, and UI component libraries.</p>
       <p>Passionate about my family, surfing, kiteboarding, web development, travel, nachos, disc golf and pushing myself learn and do more.</p>
       `,
