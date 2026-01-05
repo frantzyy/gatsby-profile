@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_profile=self.webpackChunkgatsby_profile||[]).push([[458],{8388:function(e,t,a){a.r(t);var s=a(6540),n=a(4109),r=a(4810);t.default=e=>{const t=(0,r.GR)("2133216550").site.siteMetadata.interests.map(((e,t)=>s.createElement("li",{key:t},e)));return s.createElement(n.A,{pageTitle:"Interests",pageDescription:"Learn more about my interests and hoppies"},s.createElement("ul",null,t))}}}]);
+//# sourceMappingURL=component---src-pages-interests-js-1ecf6475dedc56f2472f.js.map
