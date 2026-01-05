@@ -16,6 +16,9 @@ const Footer = props => {
               Gatsby
             </a>
           </p>
+          {props.version && (
+            <p id="version">Version {props.version}</p>
+          )}
         </div>
       </div>
     </div>

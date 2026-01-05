@@ -1,7 +1,10 @@
+const packageJson = require("./package.json")
+
 module.exports = {
   pathPrefix: "/gatsby-profile",
   siteMetadata: {
     siteUrl: `https://frantzyy.github.io/gatsby-profile`,
+    version: packageJson.version,
     name: `Chris Frantz`,
     jobTitle: `Senior Portfolio Architect`,
     role: `Distribution Technology Domain`,
