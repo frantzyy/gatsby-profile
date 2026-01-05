@@ -6,9 +6,9 @@ module.exports = {
     siteUrl: `https://frantzyy.github.io/gatsby-profile`,
     version: packageJson.version,
     name: `Chris Frantz`,
-    jobTitle: `Senior Portfolio Architect`,
-    role: `Distribution Technology Domain`,
-    department: `US Retail Markets Architecture`,
+    jobTitle: `Platform Architect`,
+    role: `Distribution Tech Domain`,
+    department: `Global Risk Solutions SBU`,
     company: `Liberty Mutual`,
     email: `christopher.j.frantz@gmail.com`,
     socialMedia: [
@@ -20,16 +20,14 @@ module.exports = {
       { name: "twitter", link: "https://twitter.com/frantz_chris" },
     ],
     objective: `
-    <p>Seeking a Platform or Enterprise Architecture position where I can leverage my passion for designing innovative software solutions and my 
-    leadership skills to drive forward-thinking strategies across SBU or enterprise while enhancing business outcomes and efficiency</p>
+    <p>Platform Architect leveraging my passion for designing innovative software solutions and leadership skills to drive forward-thinking strategies across SBU and enterprise while enhancing business outcomes and efficiency. Focused on refining and leading target state architecture for Global Risk Solutions.</p>
 `,
     about: `
-      <p>Over 20 years of experience in large scale, complex, data intensive,
-       distributed systems who thrives on problem solving and thinking outside the box.
-      </p>
-      <p>Passionate about architecting solutions that make our systems more performant, more secure, more reliable and resillient, 
-      easier to maintain, and cost less. All the while keeping up with my 6-year-old, 3-year-old, and energetic and advenurous wife.</p>
-      <p>Constantly pushing myself to learn more and do more.</p>
+      <p>Architect with over 20 years of IT professional experience in development and maintenance of large scale web applications for public and internal facing insurance sales, service, and claims systems.</p>
+      <p>Now aligned to our Distribution Tech domain for Liberty's Global Risk Solutions SBU providing insurance and risk solutions for businesses worldwide. Focused on helping refine and lead the next target state architecture.</p>
+      <p>Eagerly exploring GraphQL concepts and implementations as well as data solutions involving data analytics, data storage, and data science including ML and AI.</p>
+      <p>Advocate and driver of Behavior Driven Development, CI/CD processes, test automation, TDD first, responsive design, and UI component libraries.</p>
+      <p>Passionate about my family, surfing, kiteboarding, web development, travel, nachos, disc golf and pushing myself learn and do more.</p>
       `,
 
     certifications: [
@@ -70,13 +68,24 @@ module.exports = {
     ],
     experience: [
       {
+        role: "Platform Architect | Global Risk Solutions | Distribution Tech",
+        when: "Feb 2025-Present",
+        company: "Liberty Mutual",
+        where: "Remote",
+        moreInfo: `<p>Helping refine and lead the next target state architecture and beyond for our Global Risk Solutions strategic business unit.<p>
+        <ul><li>Aligned to our Distribution Tech domain for Liberty's Global Risk Solutions SBU providing insurance and risk solutions for businesses worldwide</li>
+        <li>Focused on helping refine and lead the next target state architecture</li>
+        <li>Exploring GraphQL concepts and implementations as well as data solutions involving data analytics, data storage, and data science including ML and AI</li>
+        </ul>`,
+      },
+      {
         role: "Senior Portfolio Architect | USRM | Architecture",
-        when: "2022-Present",
+        when: "2022-Feb 2025",
         company: "Liberty Mutual",
         where: "Remote",
         moreInfo: `<p>Aligned to leading our Distribution Technology Domain architecture direction in alignment with our overall north star architecture for USRM and the enterprise.<p>
         <ul><li>Helped redefine how our people are organized around our software to align better with architecture direction and creating a more lean, product mindeset operating model.</li>
-        <ul>`,
+        </ul>`,
       },
       {
         role: "Senior Solutions Architect | USRM | Architecture",
