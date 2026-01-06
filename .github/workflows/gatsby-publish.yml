@@ -4,16 +4,45 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Version Bump"]
+    types:
+      - completed
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Skip deployment for commits with [skip ci] (version bump commits)
+    # For workflow_run events, always deploy if the version bump succeeded
+    if: |
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      (github.event_name == 'push' && (!github.event.head_commit || !contains(github.event.head_commit.message, '[skip ci]')))
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-branch: gh-pages
-          gatsby-args: --prefix-paths
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build Gatsby site
+        run: npm run build -- --prefix-paths
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
