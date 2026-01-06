@@ -244,6 +244,11 @@ module.exports = {
         skills:
           "API Strategy, API-First, API Products, Cloud Native Architectures, Single Page Applications, MVC, REST, GraphQL, Behavior Driven Design, CQRS, Event Driven Architectures, Analytics, Monitoring, Responsive Web Design, Test Driven Development, Continuous Integration and Continuous Delivery, Component Based Design, Functional Programming",
       },
+      {
+        category: "AI/LLM Tools",
+        skills:
+          "ChatGPT, Gemini, Claude, Grok, CoPilot, Cursor, LLMs (learning about training and architecture), MCP (Model Context Protocol)",
+      },
     ],
     interests: [
       "Surfing",
