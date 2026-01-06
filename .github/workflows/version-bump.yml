@@ -60,10 +60,11 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Update CHANGELOG.md
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           NEW_VERSION="${{ steps.new-version.outputs.version }}"
           DATE=$(date +"%Y-%m-%d")
-          PR_TITLE="${{ github.event.pull_request.title }}"
           
           # Create new changelog entry
           ENTRY="v${NEW_VERSION}\n\n- ${DATE} ${PR_TITLE}\n"
