@@ -19,7 +19,7 @@ Version management is automated through a separate GitHub Actions workflow that 
 
 **No manual steps required!** The workflow runs automatically on every push to `main`.
 
-**Note:** If you merge a Pull Request with a version label (`major`, `minor`, or `patch`), the version will be automatically bumped. The version bump commit includes `[skip ci]` to prevent triggering deployment, so the new version will be deployed on the next regular commit or push.
+**Note:** If you merge a Pull Request with a version label (`major`, `minor`, or `patch`), the version will be automatically bumped first, and then the site will be automatically deployed with the new version. The deployment workflow waits for the version bump workflow to complete before running.
 
 ### Manual Deployment
 
@@ -47,19 +47,48 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Version Bump"]
+    types:
+      - completed
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Skip deployment for commits with [skip ci] (version bump commits)
+    # For workflow_run events, always deploy if the version bump succeeded
+    if: |
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      (github.event_name == 'push' && (!github.event.head_commit || !contains(github.event.head_commit.message, '[skip ci]')))
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-branch: gh-pages
-          gatsby-args: --prefix-paths
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build Gatsby site
+        run: npm run build -- --prefix-paths
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
 ```
 
 ### Workflow Breakdown
@@ -70,9 +99,17 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Version Bump"]
+    types:
+      - completed
+    branches:
+      - main
 ```
 - The workflow triggers automatically when code is pushed to the `main` branch
-- This includes commits, merges, and pull request merges
+- **Additionally**, the workflow triggers after the "Version Bump" workflow completes successfully
+- This ensures that when a PR with a version label is merged, the version is bumped first, then the site is deployed with the new version
+- Commits with `[skip ci]` in the message are skipped to prevent deployment loops
 
 #### 2. Job Configuration
 ```yaml
@@ -93,27 +130,56 @@ jobs:
 - Checks out your repository code so the workflow can access it
 - This is a standard GitHub Action that downloads your code to the runner
 
-#### 4. Build and Deploy Step
+#### 4. Build Steps
+
+The workflow uses explicit steps for better control and reliability:
+
+**Step 1: Checkout**
 ```yaml
-- uses: enriikke/gatsby-gh-pages-action@v2
+- name: Checkout repository
+  uses: actions/checkout@v3
   with:
-    access-token: ${{ secrets.GITHUB_TOKEN }}
-    deploy-branch: gh-pages
-    gatsby-args: --prefix-paths
+    token: ${{ secrets.GITHUB_TOKEN }}
+    fetch-depth: 0
 ```
+- Checks out the repository code with full git history
 
-This is where the magic happens! The `gatsby-gh-pages-action` does the following:
+**Step 2: Setup Node.js**
+```yaml
+- name: Setup Node.js
+  uses: actions/setup-node@v3
+  with:
+    node-version: '18'
+    cache: 'npm'
+```
+- Sets up Node.js version 18
+- Enables npm caching for faster builds
 
-**What it does:**
-1. **Installs dependencies** - Runs `npm install` (or `yarn install`) to get all required packages
-2. **Builds the site** - Executes `npm run build`, which runs `gatsby build` with the `--prefix-paths` flag
-3. **Prepares deployment** - Copies any `CNAME` file (for custom domains) to the build output
-4. **Deploys to GitHub Pages** - Pushes the built files from the `public` directory to the `gh-pages` branch
+**Step 3: Install Dependencies**
+```yaml
+- name: Install dependencies
+  run: npm ci
+```
+- Installs dependencies using `npm ci` for faster, reliable, reproducible builds
 
-**Configuration options:**
-- `access-token`: Uses `GITHUB_TOKEN`, which is automatically provided by GitHub Actions (no setup required!)
-- `deploy-branch: gh-pages`: Specifies the branch where GitHub Pages serves the site from
-- `gatsby-args: --prefix-paths`: Tells Gatsby to respect the `pathPrefix` configuration
+**Step 4: Build**
+```yaml
+- name: Build Gatsby site
+  run: npm run build -- --prefix-paths
+```
+- Builds the Gatsby site with the `--prefix-paths` flag to respect the `pathPrefix` configuration
+
+**Step 5: Deploy**
+```yaml
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./public
+    publish_branch: gh-pages
+```
+- Deploys the built site from the `public` directory to the `gh-pages` branch
+- Uses `peaceiris/actions-gh-pages` which is a reliable, well-maintained action for GitHub Pages deployment
 
 ## The `--prefix-paths` Flag
 
@@ -279,7 +345,8 @@ The version bump workflow (`.github/workflows/version-bump.yml`) triggers when a
    - Update the version in `package.json`
    - Create a Git tag (e.g., `v0.3.0`)
    - Update `CHANGELOG.md` with the new version entry
-   - Commit the changes with `[skip ci]` to prevent triggering deployment
+   - Commit the changes with `[skip ci]` to prevent the push trigger from running
+   - After the version bump completes, the deployment workflow automatically runs to deploy the site with the new version
 
 #### Version Bump Process
 
@@ -293,20 +360,24 @@ When a PR with a version label is merged, the workflow:
    - Version number (e.g., `v0.3.0`)
    - Current date
    - PR title as description
-6. **Commits changes** - Creates commits with `[skip ci]` to prevent deployment loops
+6. **Commits changes** - Creates commits with `[skip ci]` to prevent the push trigger from running deployment
 7. **Pushes to repository** - Pushes the commits and tags to the `main` branch
+8. **Triggers deployment** - The deployment workflow automatically runs after the version bump workflow completes, deploying the site with the new version
 
 ### Version and Deployment Relationship
 
-The version bump and deployment workflows are intentionally separate:
+The version bump and deployment workflows work together to ensure proper ordering:
 
-- **Version bump commits include `[skip ci]`** - This prevents the deployment workflow from running when only the version is updated
-- **Next regular commit triggers deployment** - When you push code changes (not just version bumps), the deployment workflow runs and includes the new version
+- **Version bump runs first** - When a PR with a version label is merged, the version bump workflow runs first
+- **Deployment waits for version bump** - The deployment workflow is configured to trigger after the version bump workflow completes successfully via `workflow_run`
+- **Automatic deployment with new version** - After version bump completes, the site is automatically deployed with the updated version
+- **`[skip ci]` protection** - Version bump commits include `[skip ci]` to prevent the push trigger from running deployment, but the `workflow_run` trigger ensures deployment still happens after version bump
 - **Version is automatically reflected** - Since `gatsby-config.js` reads the version from `package.json`, the site automatically displays the new version after deployment
 
-This separation ensures:
-- Version bumps don't trigger unnecessary deployments
+This ensures:
+- Version bumps always complete before deployment
 - Deployments always include the latest version
+- No race conditions between version bump and deployment
 - Clear separation of concerns between versioning and deployment
 
 ### Viewing Version History
