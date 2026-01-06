@@ -1,0 +1,85 @@
+name: Version Bump
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Determine version bump type
+        id: version-type
+        run: |
+          LABELS="${{ join(github.event.pull_request.labels.*.name, ' ') }}"
+          if echo "$LABELS" | grep -q "major"; then
+            echo "type=major" >> $GITHUB_OUTPUT
+          elif echo "$LABELS" | grep -q "patch"; then
+            echo "type=patch" >> $GITHUB_OUTPUT
+          else
+            echo "type=minor" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get current version
+        id: current-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version
+        uses: phips28/gh-action-bump-version@master
+        with:
+          tag-prefix: "v"
+          commit-message: "chore: bump version to {{version}} [skip ci]"
+          version-type: ${{ steps.version-type.outputs.type }}
+          skip-tag: false
+          skip-commit: false
+          skip-push: true
+
+      - name: Get new version
+        id: new-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update CHANGELOG.md
+        run: |
+          NEW_VERSION="${{ steps.new-version.outputs.version }}"
+          DATE=$(date +"%Y-%m-%d")
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          
+          # Create new changelog entry
+          ENTRY="v${NEW_VERSION}\n\n- ${DATE} ${PR_TITLE}\n"
+          
+          # Read current changelog
+          CHANGELOG=$(cat CHANGELOG.md)
+          
+          # Prepend new entry
+          echo -e "${ENTRY}${CHANGELOG}" > CHANGELOG.md
+
+      - name: Commit CHANGELOG update
+        run: |
+          git add CHANGELOG.md
+          git commit -m "chore: update CHANGELOG for v${{ steps.new-version.outputs.version }} [skip ci]" || exit 0
+
+      - name: Push changes and tags
+        run: |
+          git push origin HEAD:main
+          git push origin --tags

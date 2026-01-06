@@ -6,6 +6,8 @@ This document explains how the deployment process works for this Gatsby site, in
 
 The site is automatically deployed to GitHub Pages at `https://frantzyy.github.io/gatsby-profile` whenever changes are pushed to the `main` branch. The deployment is handled by a GitHub Actions workflow that builds the Gatsby site and publishes it to the `gh-pages` branch.
 
+Version management is automated through a separate GitHub Actions workflow that bumps the version number when Pull Requests are merged with version labels. The version is automatically updated in `package.json`, reflected in the site via `gatsby-config.js`, and tracked in `CHANGELOG.md` and Git tags.
+
 ## Deployment Methods
 
 ### Automatic Deployment (Recommended)
@@ -16,6 +18,8 @@ The site is automatically deployed to GitHub Pages at `https://frantzyy.github.i
 3. Make it live on GitHub Pages
 
 **No manual steps required!** The workflow runs automatically on every push to `main`.
+
+**Note:** If you merge a Pull Request with a version label (`major`, `minor`, or `patch`), the version will be automatically bumped. The version bump commit includes `[skip ci]` to prevent triggering deployment, so the new version will be deployed on the next regular commit or push.
 
 ### Manual Deployment
 
@@ -231,9 +235,106 @@ The `permissions: contents: write` setting grants the token permission to:
 - Check that `pathPrefix: "/gatsby-profile"` is set in `gatsby-config.js`
 - Ensure all asset paths use relative URLs or Gatsby's `Link` component
 
+### Version Bump Not Triggering
+
+- Verify the PR was actually merged (not just closed)
+- Check that a version label (`major`, `minor`, or `patch`) was added to the PR
+- Review the Actions tab to see if the workflow ran and check for errors
+- Ensure the PR was merged into the `main` branch
+
+### Version Bump Issues
+
+- If version wasn't bumped, check the workflow logs in the Actions tab
+- Verify the label name matches exactly: `major`, `minor`, or `patch` (case-sensitive)
+- Check that `package.json` has a valid version number format (e.g., `0.2.0`)
+- Ensure the workflow has `contents: write` permission
+
+## Version Management
+
+The repository uses automated version bumping through GitHub Actions. When a Pull Request is merged with a version label, the version number is automatically incremented, a Git tag is created, and the CHANGELOG is updated.
+
+### Version Bump Workflow
+
+The version bump workflow (`.github/workflows/version-bump.yml`) triggers when a Pull Request is merged into the `main` branch. It checks for version labels on the PR to determine how to bump the version.
+
+#### Version Types
+
+- **`major`**: Increments the major version (e.g., `0.2.0` → `1.0.0`)
+  - Use for breaking changes that are incompatible with previous versions
+- **`minor`**: Increments the minor version (e.g., `0.2.0` → `0.3.0`) - **Default**
+  - Use for new features that are backward compatible
+  - If no version label is present, the workflow defaults to `minor`
+- **`patch`**: Increments the patch version (e.g., `0.2.0` → `0.2.1`)
+  - Use for bug fixes and small changes that are backward compatible
+
+#### How to Use Version Bumping
+
+1. **Create a Pull Request** with your changes
+2. **Add a version label** to the PR:
+   - Go to the PR on GitHub
+   - Click on the "Labels" section
+   - Add one of: `major`, `minor`, or `patch`
+   - If no label is added, it defaults to `minor`
+3. **Merge the PR** - The version bump workflow will automatically:
+   - Update the version in `package.json`
+   - Create a Git tag (e.g., `v0.3.0`)
+   - Update `CHANGELOG.md` with the new version entry
+   - Commit the changes with `[skip ci]` to prevent triggering deployment
+
+#### Version Bump Process
+
+When a PR with a version label is merged, the workflow:
+
+1. **Checks if PR was merged** - Only runs if the PR was actually merged (not just closed)
+2. **Determines version bump type** - Checks for `major`, `minor`, or `patch` label (defaults to `minor`)
+3. **Bumps version in package.json** - Updates the version number using semantic versioning
+4. **Creates Git tag** - Tags the commit with the new version (format: `v{version}`)
+5. **Updates CHANGELOG.md** - Adds a new version entry at the top with:
+   - Version number (e.g., `v0.3.0`)
+   - Current date
+   - PR title as description
+6. **Commits changes** - Creates commits with `[skip ci]` to prevent deployment loops
+7. **Pushes to repository** - Pushes the commits and tags to the `main` branch
+
+### Version and Deployment Relationship
+
+The version bump and deployment workflows are intentionally separate:
+
+- **Version bump commits include `[skip ci]`** - This prevents the deployment workflow from running when only the version is updated
+- **Next regular commit triggers deployment** - When you push code changes (not just version bumps), the deployment workflow runs and includes the new version
+- **Version is automatically reflected** - Since `gatsby-config.js` reads the version from `package.json`, the site automatically displays the new version after deployment
+
+This separation ensures:
+- Version bumps don't trigger unnecessary deployments
+- Deployments always include the latest version
+- Clear separation of concerns between versioning and deployment
+
+### Viewing Version History
+
+You can view the version history in several ways:
+
+1. **Git Tags**: View all version tags with `git tag` or on GitHub under Releases
+2. **CHANGELOG.md**: See version history with dates and descriptions
+3. **package.json**: Check the current version number
+4. **Git Log**: View version bump commits with `git log --grep="bump version"`
+
+### Semantic Versioning Best Practices
+
+This project follows [Semantic Versioning](https://semver.org/) (SemVer):
+
+- **MAJOR** version when you make incompatible API changes
+- **MINOR** version when you add functionality in a backward compatible manner
+- **PATCH** version when you make backward compatible bug fixes
+
+For this profile site:
+- **Major**: Complete redesign, breaking changes to site structure
+- **Minor**: New sections, new features, content updates (default)
+- **Patch**: Bug fixes, small corrections, typo fixes
+
 ## Additional Resources
 
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Gatsby GitHub Pages Guide](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/)
 - [gatsby-gh-pages-action on GitHub Marketplace](https://github.com/marketplace/actions/gatsby-publish)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
+- [Semantic Versioning](https://semver.org/)
