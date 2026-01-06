@@ -14,8 +14,11 @@ Check out the my profile running [https://frantzyy.github.io/gatsby-profile](htt
 
 ## Deploy
 
-`npm run deploy`
+The site is automatically deployed to GitHub Pages when you push changes to the `main` branch. GitHub Actions handles the build and deployment process automatically.
 
-This builds the Gatsby app then leverages the npm `gh-pages` package that automatically updates the gh-pages branch and pushes to the repo to trigger a Github Pages deploy.
+For manual deployment, you can run:
+```bash
+npm run deploy
+```
 
-More info [here](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/).
+For detailed information about the deployment process, see [DEPLOYMENT.md](DEPLOYMENT.md).
